@@ -1,5 +1,17 @@
+import sys
+
 def rm_smallest(d):
-    # Your code here!
+    if len(d) > 0:
+        current_min = sys.maxsize
+        min_key = ""
+
+        for i in d:
+            if d[i] < current_min:
+                current_min = d[i]
+                min_key = i
+
+        d.pop(min_key)
+
     return d
 
 def test():

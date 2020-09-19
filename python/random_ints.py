@@ -1,8 +1,14 @@
 import random
 
 def random_ints():
-    # Your code here!
     l = []
+
+    current = 0
+    while current != 6:
+        r = (int)(random.random() * 10) + 1
+        l.append(r)
+        current = r
+
     return l
 
 def test():
