@@ -9,12 +9,22 @@
         console.log("You found me!");
         function square(i) {
             // Your code here!
-            return 0
+            if (typeof i != "number") {
+                return -1
+            }
+            return i * i
         }
 
         function numberString(i) {
             // Your code here!
-            return ""
+            s = "";
+            if (typeof i == "number" && i > 0) {
+                for (n = 1; n <= i; n++) {
+                    s += n;
+                }
+            }
+
+            return s
         }
     </script>
 </body>

@@ -22,4 +22,40 @@ let std_quotes = ["Patience you must have, my young padawan.",
 function respond() {
     // Your Code Here
     console.log("Hello World!");
+    var img_path = "img/";
+    var response_text = "H";
+    var quote_index = Math.floor(Math.random() * 5);
+
+    speech = document.getElementById("textbox").value;
+    if (speech.includes("cute") || speech.includes("baby")) {
+        img_path += names[0];
+        let num_m = Math.floor(Math.random() * 10) + 10;
+        for (i = 0; i < num_m; i++) {
+            response_text += "m"
+        }
+        response_text += "."
+    } else {
+        img_path += names[1]
+        if (speech.includes("dark")) {
+            response_text = dark_quotes[quote_index]
+        } else if (speech.includes("force")) {
+            response_text = force_quotes[quote_index]
+        } else {
+            response_text = std_quotes[quote_index]
+        }
+    }
+    img_path += "-";
+    if (speech.includes("force")) {
+        if (speech.includes("dark")) {
+            img_path += moods[0]
+        } else {
+            img_path += moods[1]
+        }
+    } else {
+        img_path += moods[2]
+    }
+    img_path += ".jpg";
+
+    document.getElementById("yoda_img").setAttribute("src", img_path);
+    document.getElementById("response").innerHTML = response_text;
 }
